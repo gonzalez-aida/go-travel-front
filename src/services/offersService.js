@@ -1,5 +1,5 @@
 export const fetchOffers = (callback) => {
-    const eventSource = new EventSource("http://localhost:3001/sse/offerts");
+    const eventSource = new EventSource("https://go-travel-back.onrender.com/sse/offerts");
   
     eventSource.onmessage = (event) => {
       const data = JSON.parse(event.data);
