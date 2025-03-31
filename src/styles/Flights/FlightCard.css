@@ -1,0 +1,276 @@
+
+  .flight-header {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+  
+  .flight-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: black;
+  }
+  
+  .flight-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .flight-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  
+  .flight-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flight-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+  
+  .flight-value {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .flight-time-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  .flight-time {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #858b8b;
+  }
+  
+  .flight-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2070c0;
+  }
+  
+  .reserve-button {
+    margin-top: 20px;
+    background-color: #1CA5B8;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reserve-button:hover {
+    background-color: var(--secondary-color);
+  }
+
+  .flight-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 280px; 
+    flex: 1 1 auto; 
+  }
+  
+  .flight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--hover-shadow-color);
+  }
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.reservation-modal {
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Seat selection */
+.seats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.seat-btn {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.seat-btn:hover {
+  background: #f0f0f0;
+}
+
+.seat-btn.selected {
+  background: #1CA5B8;
+  color: white;
+  border-color: #1CA5B8;
+}
+
+/* Payment form */
+.payment-form {
+  margin-top: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Modal actions */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.modal-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.modal-actions button:first-child {
+  background: #f0f0f0;
+}
+
+.modal-actions button:first-child:hover {
+  background: #e0e0e0;
+}
+
+.modal-actions .pay-button {
+  background:#1CA5B8;
+  color: white;
+}
+
+.modal-actions .pay-button:hover {
+  background: #1CA5B8;
+}
+
+
+/* reservacion */
+  .receipt {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .receipt-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .airline-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .receipt h2 {
+    color: #333;
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .receipt p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .receipt p strong {
+    color: #333;
+  }
+  
+  .receipt-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .download-btn, .close-btn {
+    padding: 10px 20px;
+    background-color: #1CA5B8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .download-btn:hover, .close-btn:hover {
+    background-color: #1CA5B8;
+  }
+  
+  .receipt-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  
+  .receipt-footer a {
+    color: #4CAF50;
+  }
+  

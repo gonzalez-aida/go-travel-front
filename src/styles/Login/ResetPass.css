@@ -1,0 +1,75 @@
+
+.reset-password-modal {
+    border-radius: 8px;
+  }
+  
+  .reset-password-modal .ant-modal-content {
+    border-radius: 8px;
+    padding: 24px;
+  }
+  
+  .custom-steps {
+    margin-bottom: 24px;
+  }
+  
+  .custom-steps .ant-steps-item-title {
+    font-weight: 500;
+  }
+  
+  .step-content {
+    padding: 0 16px;
+  }
+  
+  .step-title {
+    margin-bottom: 8px !important;
+    color: #1a1a1a;
+  }
+  
+  .step-description {
+    display: block;
+    margin-bottom: 24px;
+    color: #666;
+  }
+  
+  .reset-password-modal .ant-input-affix-wrapper {
+    padding: 10px 11px;
+  }
+  
+  .reset-password-modal .ant-input-prefix {
+    margin-right: 8px;
+    color: #1CA5B8;
+  }
+  
+  .modal-footer-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+  }
+  
+  .action-button {
+    flex: 1;
+    margin-left: 8px;
+    background-color: #1CA5B8;
+  }
+  
+  .back-button {
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    .reset-password-modal {
+      width: 90% !important;
+      max-width: none;
+    }
+    
+    .modal-footer-actions {
+      flex-direction: column-reverse;
+      gap: 8px;
+    }
+    
+    .action-button, .back-button {
+      width: 100%;
+      margin: 0;
+    }
+
+  }

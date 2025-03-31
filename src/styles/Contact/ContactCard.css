@@ -1,0 +1,60 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --text-color: #374151;
+    --background-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.15);
+  }
+  
+  .contact-card {
+    background-color: var(--background-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; 
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--hover-shadow-color);
+  }
+  
+  .contact-city {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 12px;
+  }
+  
+  .contact-location,
+  .contact-email {
+    margin: 8px 0;
+  }
+  
+  .contact-location {
+    font-weight: 500;
+  }
+  
+  .contact-email {
+    color: var(--secondary-color);
+  }
+  
+  .contact-map {
+    margin-top: 12px;
+  }
+  
+  .map-image {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }

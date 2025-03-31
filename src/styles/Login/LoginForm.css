@@ -1,0 +1,207 @@
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+  }
+  
+  .login-form .ant-form-item-label {
+    font-weight: 600;
+    color: #4b5563; 
+  }
+  
+  
+  .login-form .ant-input,
+  .login-form .ant-input-password {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db; 
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .login-form .ant-input:focus,
+  .login-form .ant-input-password:focus {
+    border-color: #97baf1; 
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2); 
+  }
+  
+  .login-form .ant-btn {
+    width: 50%;
+    background-color: #1CA5B8; 
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    display: flex;      
+    margin: 0 auto;   
+  }
+  
+  .login-form .ant-btn:hover {
+    background-color: #75caf1; 
+  }
+  
+  .login-form .register-text {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280; 
+  }
+  
+  .login-form .register-text a {
+    color: #1CA5B8;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  
+  .login-form .register-text a:hover {
+    text-decoration: underline; 
+  }
+
+  /* Estilos para el Modal MFA */
+.mfa-modal {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mfa-modal .ant-modal-content {
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.mfa-modal .ant-modal-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.mfa-modal .ant-modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+}
+
+/* Pasos del proceso MFA */
+.mfa-steps {
+  margin-bottom: 24px;
+}
+
+.mfa-steps .ant-steps-item-title {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.mfa-steps .ant-steps-item-process .ant-steps-item-title {
+  font-weight: 600;
+  color: #1CA5B8;
+}
+
+/* Contenido del MFA */
+.mfa-content {
+  padding: 0 16px;
+}
+
+.mfa-content h3 {
+  font-size: 18px;
+  color: #1f2937;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.mfa-content p {
+  color: #6b7280;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* QR Code */
+.qr-container {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 20px;
+  width: fit-content;
+  border: 1px solid #e5e7eb;
+}
+
+/* Código secreto */
+.mfa-secret {
+  display: block;
+  background: #f3f4f6;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 16px;
+  color: #1f2937;
+  text-align: center;
+  margin: 0 auto 20px;
+  width: fit-content;
+  border: 1px dashed #d1d5db;
+}
+
+/* Botones MFA */
+.mfa-continue-btn {
+  background-color: #1CA5B8;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin: 24px auto 0;
+  transition: background-color 0.3s;
+}
+
+.mfa-continue-btn:hover {
+  background-color: #168a99;
+}
+
+/* Input de verificación */
+.mfa-input .ant-input {
+  height: 48px;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 4px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.mfa-input .ant-input-group-addon button {
+  background-color: #1CA5B8;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  color: white;
+  font-weight: 600;
+  height: 48px;
+}
+
+.mfa-input .ant-input-group-addon button:hover {
+  background-color: #168a99 !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .mfa-modal .ant-modal {
+    max-width: calc(100vw - 32px);
+  }
+  
+  .mfa-content {
+    padding: 0;
+  }
+  
+  .qr-container {
+    padding: 12px;
+  }
+  
+  .mfa-secret {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
