@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Form, Input, Button, Typography, Modal, message } from "antd";
 import "../../../styles/Login/LoginForm.css";
 import { loginUser, verifyMFA } from "../../../services/authService";
@@ -115,9 +115,9 @@ const LoginForm = () => {
         
         <Text className="register-text">
           ¿No tienes una cuenta?{" "}
-          <a href="/register" className="text-blue-600 font-semibold hover:underline">
+          <Link to="/register" className="text-blue-600 font-semibold hover:underline">
             Regístrate aquí
-          </a>
+          </Link>
         </Text>
       </Form>
       

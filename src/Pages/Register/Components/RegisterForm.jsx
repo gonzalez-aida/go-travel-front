@@ -3,7 +3,7 @@ import { Form, Input, Button } from "antd";
 import "../../../styles/Register/RegisterForm.css"; 
 import { registerUser } from "../../../services/authService";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const RegisterForm = () => {
   const navigate = useNavigate();
@@ -62,9 +62,7 @@ const RegisterForm = () => {
           Registrar
         </Button>
       </Form.Item>
-      <a href="/"type="primary" block>
-          Volver
-      </a>
+      <Link to="/">Volver</Link>
     </Form>
   );
 };
