@@ -127,7 +127,7 @@ const LoginForm = () => {
       />
 
       <Modal
-        title="Verificación en Dos Pasos"
+        title="Verificación en dos pasos"
         visible={mfaModalVisible}
         onCancel={handleCancelMFA}
         footer={null}
@@ -171,7 +171,7 @@ const LoginForm = () => {
               block
               loading={mfaLoading}
             >
-              Verificar Código
+              Verificar código
             </Button>
           </Form>
         </div>
