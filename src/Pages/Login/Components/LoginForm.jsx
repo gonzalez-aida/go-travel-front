@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Form, Input, Button, Typography, Modal, message } from "antd";
+import { Form, Input, Button, Typography, Modal } from "antd";
 import "../../../styles/Login/LoginForm.css";
 import { loginUser, verifyMFA } from "../../../services/authService";
 import ResetPass from "./Modals/ResetPass";
 import { QRCodeSVG } from "qrcode.react";
-import { toast } from 'react-toastify';
+import { CheckCircleOutlined, CloseCircleOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -19,6 +19,11 @@ const LoginForm = () => {
   const [otpAuthUrl, setOtpAuthUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [mfaLoading, setMfaLoading] = useState(false);
+  const [modal, setModal] = useState({ visible: false, message: "", success: false });
+
+  const showModal2 = (message, success) => {
+    setModal({ visible: true, message, success });
+  };
 
   const handleLogin = async (values) => {
     try {
@@ -32,11 +37,11 @@ const LoginForm = () => {
         setOtpAuthUrl(response.otpAuthUrl);
         setMfaModalVisible(true);
       } else {
-        toast.success("Inicio de sesión exitoso");
+        console.success("Inicio de sesión exitoso");
       }
     } catch (error) {
       console.error("Error en el inicio de sesión:", error);
-      message.error(error.message || "Error en el inicio de sesión");
+      showModal2("Credenciales incorrectas", false);
     } finally {
       setLoading(false);
     }
@@ -55,13 +60,13 @@ const LoginForm = () => {
       if (result.success) {
         localStorage.setItem("token", result.token);
         navigate("/home");
-        toast.success("Inicio de sesión exitoso con MFA");
+        showModal2("Inicio de sesión exitoso", true);
         setMfaModalVisible(false);
         mfaForm.resetFields();
       }
     } catch (error) {
       console.error("Error en la verificación MFA:", error);
-      toast.error(error.message || "Error al verificar el código");
+      showModal2("Error al verificar el código", false);
     } finally {
       setMfaLoading(false);
     }
@@ -176,6 +181,28 @@ const LoginForm = () => {
           </Form>
         </div>
       </Modal>
+      <Modal
+              open={modal.visible}
+              onCancel={() => setModal({ ...modal, visible: false })}
+              footer={[
+                <Button
+                  key="ok"
+                  type="primary"
+                  onClick={() => setModal({ ...modal, visible: false })}
+                >
+                  OK
+                </Button>,
+              ]}
+            >
+              <div style={{ textAlign: "center", padding: 20 }}>
+                {modal.success ? (
+                  <CheckCircleOutlined style={{ fontSize: 50, color: "blue" }} />
+                ) : (
+                  <CloseCircleOutlined style={{ fontSize: 50, color: "black" }} />
+                )}
+                <p style={{ fontSize: 18, marginTop: 10 }}>{modal.message}</p>
+              </div>
+            </Modal>
     </>
   );
 };

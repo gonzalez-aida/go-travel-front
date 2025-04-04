@@ -39,13 +39,11 @@ export default function ContactPage() {
     if (initCalled.current) return;
     initCalled.current = true;
 
-    // Check if Google Maps API is already loaded
     if (window.google && window.google.maps) {
       setMapState({ loaded: true, error: null });
       return;
     }
 
-    // Check if script is already being loaded
     const existingScript = document.querySelector(
       'script[src^="https://maps.googleapis.com/maps/api/js"]'
     );
@@ -57,7 +55,6 @@ export default function ContactPage() {
       return;
     }
 
-    // Load the script
     const script = document.createElement('script');
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places&loading=async`;
     script.async = true;
@@ -71,7 +68,6 @@ export default function ContactPage() {
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup
       if (script.parentNode) {
         script.parentNode.removeChild(script);
       }
